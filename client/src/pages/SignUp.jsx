@@ -7,6 +7,7 @@ export default function SignUp() {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
@@ -36,6 +37,7 @@ export default function SignUp() {
       setError(true);
     }
   };
+
   return (
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl text-center font-semibold my-7'>Sign Up</h1>
@@ -46,6 +48,7 @@ export default function SignUp() {
           id='username'
           className='bg-slate-100 p-3 rounded-lg'
           onChange={handleChange}
+          autoComplete='username'
         />
         <input
           type='email'
@@ -53,6 +56,7 @@ export default function SignUp() {
           id='email'
           className='bg-slate-100 p-3 rounded-lg'
           onChange={handleChange}
+          autoComplete='email'
         />
         <input
           type='password'
@@ -60,6 +64,7 @@ export default function SignUp() {
           id='password'
           className='bg-slate-100 p-3 rounded-lg'
           onChange={handleChange}
+          autoComplete='new-password'
         />
         <button
           disabled={loading}
